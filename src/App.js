@@ -1,25 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react"
+import Header from "./Header"
+import Login from "./Login";
+import Footer from "./Footer"
+import Ligas from "./Ligas"
+import Paises from "./Paises";
+import Times from "./Times";
+import TimeDados from "./TimeDados"
+import {BrowserRouter,Routes,Route} from 'react-router-dom'
 
-function App() {
+
+/*
+*/
+
+const App =()=>{
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    
+    <BrowserRouter >
+    <Header/>
+    
+      <Routes>
+          <Route exact path="/" element={<Login/>}/>
+          <Route path="Ligas" element={<Ligas/>}/>
+          <Route path="Paises" element={<Paises/>}/>
+          <Route path="Times" element={<Times/>}/>
+          <Route path="TimeDados" element={<TimeDados/>}/>
+          
 
+      </Routes>
+    <Footer/>
+    </BrowserRouter>
+    
+  )
+}
 export default App;
+
+
